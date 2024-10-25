@@ -27,12 +27,8 @@ export default function Home() {
 
       <style jsx>{`
         main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 800px;
+          height: 600px;
         }
         footer {
           width: 100%;
