@@ -1,9 +1,6 @@
-import { useLoader } from '@react-three/fiber'
-import { shaderMaterial, RenderTexture, useFBX, useTexture } from '@react-three/drei'
+import { RenderTexture, useFBX, useTexture } from '@react-three/drei'
 import * as THREE from "three";
-import { extend } from '@react-three/fiber';
 import ComputerScreen from './computerscreen';
-
 
 function setupMaterials(fbx) {
     const [tower_texture, monitor_texture, keyboard_texture] = useTexture([
