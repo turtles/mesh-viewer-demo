@@ -37,7 +37,7 @@ function setupWireframe(fbx) {
     });
 }
 
-const ComputerMesh = ({ isWireframe = false, children }) => {
+const ComputerMesh = ({ position = [0, 0, 0], isWireframe = false, children }) => {
     const computerModel = useFBX('/computer-model/computer.fbx');
 
     if (isWireframe) {
@@ -49,8 +49,8 @@ const ComputerMesh = ({ isWireframe = false, children }) => {
 
     return (
         <>
-            <primitive object={computerModel} scale={0.02} position={[0, -2, 0]} />
-            <ComputerScreen>
+            <primitive object={computerModel} scale={0.02} position={position} />
+            <ComputerScreen position={position}>
                 <meshStandardMaterial>
                     <RenderTexture attach="map">
                         {children}
