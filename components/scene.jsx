@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { Canvas } from '@react-three/fiber'
 import ComputerMesh from './computermesh';
-import { OrbitControls } from '@react-three/drei'
 
 function Scene(props) {
     return (
@@ -13,7 +12,6 @@ function Scene(props) {
                     <color attach="background" args={['blue']} />
                 </ComputerMesh>
             </Suspense>
-            <OrbitControls />
         </Canvas >);
 }
 
