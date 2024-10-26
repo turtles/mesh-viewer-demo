@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Scene from '../components/3d/scene';
+import EditorPanel from '../components/editorpanel';
 
 export default function Home() {
   return (
@@ -11,23 +12,17 @@ export default function Home() {
       </Head>
 
       <main>
+        <img src="/background.jpg" className={styles.backdrop} />
         <Scene />
+        <EditorPanel />
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
 
       <style jsx>{`
         main {
-          width: 800px;
+          display:flex;
+          flex-direction:horizontal;
+          
+          width: 1000px;
           height: 600px;
         }
         footer {
