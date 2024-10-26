@@ -1,6 +1,6 @@
 .console {
     width: 100%;
-    flex-grow: 8;
+    flex-grow: 1;
     padding: 8px;
     background-color: black;
     color: white;
@@ -42,9 +42,51 @@
 }
 
 .buttonContainer {
-    background-color: rgb(177, 177, 177);
-    flex-grow: 1;
-    width: 100%;
-    padding: 8px;
     text-align: center;
+}
+
+.tabContainer {
+    -webkit-tap-highlight-color: transparent;
+    height: 150px;
+}
+
+.tabList {
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.tab--selected {
+    background: #fff;
+    border-color: #aaa;
+    color: black;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.tab:focus {
+    outline: none;
+}
+
+.tabPanel {
+    display: none;
+}
+
+.tabPanel--selected {
+    display: block;
 }

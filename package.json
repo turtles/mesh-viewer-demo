@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-tabs": "^6.0.2",
     "three": "^0.169.0"
   },
   "engines": {

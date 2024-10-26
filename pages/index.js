@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Scene from '../components/3d/scene';
-import EditorPanel from '../components/editorpanel';
+import Editor from '../components/editor';
 
 export default function Home() {
   return (
@@ -13,8 +12,7 @@ export default function Home() {
 
       <main>
         <img src="/background.jpg" className={styles.backdrop} />
-        <Scene />
-        <EditorPanel />
+        <Editor />
       </main>
 
       <style jsx>{`

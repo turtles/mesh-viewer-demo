@@ -1,9 +1,9 @@
 import React from "react";
 import styles from '../styles/EditorPanel.module.css';
 
-const EditorButton = ({ label }) => {
+const EditorButton = ({ label, onClick }) => {
     return (
-        <button className={styles.editorButton}>
+        <button onClick={onClick} className={styles.editorButton}>
             {label}
         </button>
     )
