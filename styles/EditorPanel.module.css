@@ -1,10 +1,12 @@
 .console {
     width: 100%;
     flex-grow: 1;
+    max-height: 414px;
     padding: 8px;
     background-color: black;
     color: white;
     display: flex;
+    overflow: scroll;
     flex-direction: column;
 }
 
@@ -36,9 +38,25 @@
 
 .editorButton {
     background-color: rgb(187, 187, 187);
-    height: 64px;
-    width: 64px;
+    padding: 8px 16px;
     font-family: inherit;
+}
+
+.editorColorButton {
+    width: 24px;
+    height: 24px;
+}
+
+.editorColorButtonSelected {
+    width: 24px;
+    height: 24px;
+    border: blue solid 4px;
+}
+
+.verticalContainer {
+    padding: 0px 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .buttonContainer {

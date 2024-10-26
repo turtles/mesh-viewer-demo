@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei';
-import * as THREE from "three";
+import { getColorHex } from '../data/colors';
 
 const EditableMesh = (props) => {
     const ref = useRef();
@@ -16,7 +16,6 @@ const EditableMesh = (props) => {
 
     const { nodes, materials } = useGLTF('/utah_teapot.glb');
 
-
     return (
         <mesh
             {...props}
@@ -28,7 +27,7 @@ const EditableMesh = (props) => {
             onClick={(event) => click(!clicked)}
             onPointerOver={(event) => hover(true)}
             onPointerOut={(event) => hover(false)}>
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'white'}
+            <meshStandardMaterial color={hovered ? 'hotpink' : getColorHex(props.color)}
                 wireframe={props.isWireframe}
             />
         </mesh>
