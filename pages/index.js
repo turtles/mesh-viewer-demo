@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Scene from '../components/scene';
+import Scene from '../components/3d/scene';
 
 export default function Home() {
   return (
