@@ -27,5 +27,5 @@ export default function ComputerScreen(props) {
     )
 }
 
-useGLTF.preload('/computer-model/monitor_screen.glb')
+useGLTF.preload('./computer-model/monitor_screen.glb')
 
