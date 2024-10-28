@@ -17,6 +17,8 @@
     height: 32px;
     line-height: 32px;
     text-align: center;
+    border-bottom: solid 2px rgb(213, 218, 221);
+    border-radius: 4px 4px 0 0;
 }
 
 .editorPanel {
@@ -24,10 +26,9 @@
     display: flex;
     flex-direction: column;
     padding: 2px;
-    border-style: solid;
-    border: 2px;
-    border-color: rgb(69, 69, 69);
+    border-bottom: solid 2px rgb(69, 69, 69);
     background-color: rgb(213, 218, 221);
+    border-radius: 6px;
 
     /*
         "Monospace" repetition is intentional - it is a hack/workaround to
