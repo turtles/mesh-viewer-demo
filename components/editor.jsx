@@ -26,7 +26,6 @@ export default function Editor() {
         setCommands([...commands,
         processCommand(command)]);
     }
-    console.log(isWavy);
 
     return (
         <>
