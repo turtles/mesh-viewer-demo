@@ -43,12 +43,14 @@ const EditorPanel = ({ commands, color, skew, isWavy, wavyFrequency, isExtruded,
                     </div>
                 </TabPanel>
                 <TabPanel className={styles.tabPanel}>
-                    <span>
-                        <label>Skew</label>
-                        <input type="range" min={0} max={1} step={0.01} value={skew}
-                            onChange={(e) => setSkew(e.target.value)}
-                            onClick={() => onAddCommand({ ...CommandTypes.Skew, data: skew })} />
-                    </span>
+                    <div className={styles.verticalContainer}>
+                        <span className={styles.rangeInput}>
+                            <label>Skew</label>
+                            <input type="range" min={0} max={1} step={0.01} value={skew}
+                                onChange={(e) => setSkew(e.target.value)}
+                                onClick={() => onAddCommand({ ...CommandTypes.Skew, data: skew })} />
+                        </span>
+                    </div>
                 </TabPanel>
                 <TabPanel className={styles.tabPanel}>
                     <div className={styles.verticalContainer}>
@@ -59,7 +61,7 @@ const EditorPanel = ({ commands, color, skew, isWavy, wavyFrequency, isExtruded,
                             <input type="checkbox" checked={isWavy} />
                             <label>Wavy</label>
                         </span>
-                        <span>
+                        <span className={styles.rangeInput}>
                             <label>Frequency</label>
                             <input disabled={!isWavy} type="range" min={0} max={20} step={0.1} value={wavyFrequency} onChange={(e) =>
                                 setWavyFrequency(e.target.value)

@@ -10,6 +10,16 @@
     flex-direction: column;
 }
 
+.rangeInput {
+    display: flex;
+    align-items: center;
+    margin: 2px;
+}
+
+.rangeInput>label {
+    margin-right: 4px;
+}
+
 .titleBar {
     color: white;
     background-color: blue;
@@ -51,12 +61,22 @@
     font-family: inherit;
 }
 
-.editorColorButton {
+.colorPicker {
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.colorPicker>label {
+    margin-right: 4px;
+}
+
+.colorPickerButton {
     width: 24px;
     height: 24px;
 }
 
-.editorColorButtonSelected {
+.colorPickerButtonSelected {
     width: 24px;
     height: 24px;
     border: blue solid 4px;
