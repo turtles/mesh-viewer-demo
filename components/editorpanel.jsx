@@ -58,7 +58,7 @@ const EditorPanel = ({ commands, color, skew, isWavy, wavyFrequency, isExtruded,
                             setIsWavy(!isWavy);
                             onAddCommand(CommandTypes.Wavy);
                         }}>
-                            <input type="checkbox" checked={isWavy} />
+                            <input type="checkbox" checked={isWavy}></input>
                             <label>Wavy</label>
                         </span>
                         <span className={styles.rangeInput}>

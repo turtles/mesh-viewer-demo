@@ -18,7 +18,15 @@ export default function Home() {
 
       <footer>
         Mousewheel: Zoom<br />
-        Left click (drag): Rotate scene
+        Left click (drag): Rotate scene<br />
+        <br />
+        <span className={styles.credits}>
+          Three.js + React demo <br /><br />
+          Created by Leah Sandacz  <a target="_blank" href="https://github.com/turtles">github.com/turtles</a>
+          <br /><br />
+          Computer model <a target="_blank" href="https://skfb.ly/6WCSn">"PC-9801UX"</a> by darekagomi is licensed under <a target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>.
+        </span>
+        <br />
       </footer>
       <style jsx>{`
         main {
@@ -37,18 +45,14 @@ export default function Home() {
           color: white;
           border-radius: 4px;
           background: black;
-          user-select: none;
-          -webkit-user-select: none;
         }
         footer img {
           margin-left: 0.5rem;
         }
         footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          font-size: 12px;
+          color: white;
           text-decoration: none;
-          color: inherit;
         }
         code {
           background: #fafafa;
