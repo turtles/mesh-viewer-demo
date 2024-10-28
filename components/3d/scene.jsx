@@ -4,6 +4,7 @@ import { clamp } from "three/src/math/MathUtils.js";
 import { PerspectiveCamera } from '@react-three/drei';
 import ComputerMesh from './computermesh';
 import EditableMesh from './editablemesh';
+import MeshLoader from './MeshLoader';
 
 const zoomMin = 3;
 const zoomMax = 15;
@@ -32,7 +33,7 @@ const Scene = (props) => {
     return (
         <Canvas
             onWheel={onWheel}>
-            <PerspectiveCamera makeDefault manual aspect={getAspectFromWindowSize()} position={[0, 0.2, 3.5]} />
+            <PerspectiveCamera makeDefault manual aspect={getAspectFromWindowSize()} position={[0, 0.2, 4]} />
             <ambientLight intensity={Math.PI / 3} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={1} />
             <Suspense fallback={null}>
@@ -43,7 +44,12 @@ const Scene = (props) => {
                     <ambientLight intensity={Math.PI / 3} />
                     <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={1} />
                     <PerspectiveCamera makeDefault manual aspect={1 / 1} position={[0, 0, zoom]} />
-                    <EditableMesh color={props.color.name}
+                    <EditableMesh
+                        color={props.color.name}
+                        skew={props.skew}
+                        isWavy={props.isWavy}
+                        wavyFrequency={props.wavyFrequency}
+                        isExtruded={props.isExtruded}
                         isWireframe={props.isWireframe}
                         isAutoRotate={props.isAutoRotate}
                         setIsAutoRotate={props.setIsAutoRotate} />

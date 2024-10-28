@@ -17,7 +17,6 @@ function setupMaterials(fbx) {
         cables: keyboard_texture,
     };
 
-    console.log('loading meshes');
     // Apply material to each submesh
     fbx.children.forEach((mesh) => {
         if (Object.keys(diffuseMapping).includes(mesh.name)) {

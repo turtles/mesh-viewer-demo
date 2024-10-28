@@ -1,23 +1,27 @@
 const CommandTypes = {
-    Flip: {
-        name: "Flip",
-        label: "Flip mesh",
-    },
-    Mirror: {
-        name: "Mirror",
-        label: "Mirror mesh",
-    },
-    Scale: {
-        name: "Scale",
-        label: "Set scale to {0}",
+    AutoRotate: {
+        name: "AutoRotate",
+        label: "Set auto-rotate",
     },
     Skew: {
         name: "Skew",
         label: "Skew mesh by {0}"
     },
+    Wavy: {
+        name: "Wavy",
+        label: "Set wavy",
+    },
+    WavyFrequency: {
+        name: "Wavy Frequency",
+        label: "Set wavy frequency to {0}",
+    },
+    Extrude: {
+        name: "Extrude",
+        label: "Set extrude",
+    },
     Wireframe: {
         name: "Wireframe",
-        label: "{0} wireframe"
+        label: "Set wireframe"
     },
     Color: {
         name: "Color",

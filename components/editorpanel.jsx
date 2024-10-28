@@ -7,7 +7,8 @@ import 'react-tabs/style/react-tabs.css';
 import CommandTypes from './data/commandTypes';
 import ColorPicker from './colorpicker';
 
-const EditorPanel = ({ commands, skewAmount, color, isWireframe, isAutoRotate, setIsWireframe, setIsAutoRotate, onAddCommand }) => {
+// TODO: Break this monolith up by putting each tab panel into its own class. Then pass an instance of each as render props.
+const EditorPanel = ({ commands, color, skew, isWavy, wavyFrequency, isExtruded, isWireframe, isAutoRotate, setIsWireframe, setIsAutoRotate, setSkew, setIsWavy, setWavyFrequency, setIsExtruded, onAddCommand }) => {
 
     return (
         <div className={styles.editorPanel}>
@@ -24,11 +25,17 @@ const EditorPanel = ({ commands, skewAmount, color, isWireframe, isAutoRotate, s
 
                 <TabPanel className={styles.tabPanel}>
                     <div className={styles.verticalContainer}>
-                        <span onClick={() => setIsAutoRotate(!isAutoRotate)}>
+                        <span onClick={() => {
+                            setIsAutoRotate(!isAutoRotate);
+                            onAddCommand(CommandTypes.AutoRotate);
+                        }}>
                             <input type="checkbox" checked={isAutoRotate} />
                             <label>Auto-Rotate</label>
                         </span>
-                        <span onClick={() => setIsWireframe(!isWireframe)}>
+                        <span onClick={() => {
+                            setIsWireframe(!isWireframe);
+                            onAddCommand(CommandTypes.Wireframe);
+                        }}>
                             <input type="checkbox" checked={isWireframe} />
                             <label>Wireframe</label>
                         </span>
@@ -36,18 +43,36 @@ const EditorPanel = ({ commands, skewAmount, color, isWireframe, isAutoRotate, s
                     </div>
                 </TabPanel>
                 <TabPanel className={styles.tabPanel}>
-                    <div className={styles.verticalContainer}>
-                        <div className={styles.buttonContainer}>
-                            <EditorButton label="Flip" onClick={() => onAddCommand(CommandTypes.Flip)} />
-                            <EditorButton label="Mirror" onClick={() => onAddCommand(CommandTypes.Mirror)} />
-                        </div>
-                    </div>
-                </TabPanel>
-                <TabPanel className={styles.tabPanel}>
                     <span>
                         <label>Skew</label>
-                        <input type="range" min={0} max={1} step={0.01} value={skewAmount} onChange={(e) => console.log(e.target.value)} />
+                        <input type="range" min={0} max={1} step={0.01} value={skew}
+                            onChange={(e) => setSkew(e.target.value)}
+                            onClick={() => onAddCommand({ ...CommandTypes.Skew, data: skew })} />
                     </span>
+                </TabPanel>
+                <TabPanel className={styles.tabPanel}>
+                    <div className={styles.verticalContainer}>
+                        <span onClick={() => {
+                            setIsWavy(!isWavy);
+                            onAddCommand(CommandTypes.Wavy);
+                        }}>
+                            <input type="checkbox" checked={isWavy} />
+                            <label>Wavy</label>
+                        </span>
+                        <span>
+                            <label>Frequency</label>
+                            <input disabled={!isWavy} type="range" min={0} max={20} step={0.1} value={wavyFrequency} onChange={(e) =>
+                                setWavyFrequency(e.target.value)
+                            } onClick={() => { onAddCommand({ ...CommandTypes.WavyFrequency, data: wavyFrequency }); }} />
+                        </span>
+                        <span onClick={() => {
+                            setIsExtruded(!isExtruded);
+                            onAddCommand(CommandTypes.Extrude);
+                        }}>
+                            <input type="checkbox" checked={isExtruded} />
+                            <label>Extrude</label>
+                        </span>
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>
