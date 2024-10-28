@@ -16,20 +16,29 @@ export default function Home() {
         <Editor />
       </main>
 
+      <footer>
+        Mousewheel: Zoom<br />
+        Left click (drag): Rotate scene
+      </footer>
       <style jsx>{`
         main {
-          display: flex;
           flex: 1 1 auto;
-          flex-direction: horizontal;
-          width: 100%;
+          overflow: hidden;
         }
         footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          width: 80%;
+          min-width: 100px;
+          max-width: 320px;
+          position: absolute;
+          padding: 4px;
+          font-size: 14px;
+          left: 2%;
+          bottom: 2%;
+          color: white;
+          border-radius: 4px;
+          background: black;
+          user-select: none;
+          -webkit-user-select: none;
         }
         footer img {
           margin-left: 0.5rem;
@@ -63,6 +72,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
+          height: 100%;
           font-family:
             -apple-system,
             BlinkMacSystemFont,
@@ -75,6 +85,9 @@ export default function Home() {
             Droid Sans,
             Helvetica Neue,
             sans-serif;
+        }
+        #__next { // root component of next app
+          height: 100%;
         }
         * {
           box-sizing: border-box;
