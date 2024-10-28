@@ -21,7 +21,9 @@ class Scene extends React.Component {
 
     render() {
         return (
-            <Canvas onWheel={this.onWheel.bind(this)} >
+            <Canvas
+                style={{ height: "inherit" }} /* Workaround for canvas height being set to 150px internally */
+                onWheel={this.onWheel.bind(this)}>
                 <PerspectiveCamera makeDefault manual aspect={1 / 1} position={[0, 0.2, 3.5]} />
 
                 <ambientLight intensity={Math.PI / 3} />

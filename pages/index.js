@@ -10,18 +10,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <img src="/background.jpg" className={styles.backdrop} />
+
       <main>
-        <img src="/background.jpg" className={styles.backdrop} />
         <Editor />
       </main>
 
       <style jsx>{`
         main {
-          display:flex;
-          flex-direction:horizontal;
-          
-          width: 1000px;
-          height: 600px;
+          display: flex;
+          flex: 1 1 auto;
+          flex-direction: horizontal;
+          width: 100%;
         }
         footer {
           width: 100%;
