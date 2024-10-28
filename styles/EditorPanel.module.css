@@ -1,6 +1,6 @@
 .console {
     width: 100%;
-    flex-grow: 1;
+    flex: 1 1 75%;
     max-height: 414px;
     padding: 8px;
     background-color: black;
