@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <img src="/background.jpg" className={styles.backdrop} />
+      <img src="./background.jpg" className={styles.backdrop} />
 
       <main>
         <Editor />
@@ -89,6 +89,7 @@ export default function Home() {
             Droid Sans,
             Helvetica Neue,
             sans-serif;
+          background-color:black;
         }
         #__next { // root component of next app
           height: 100%;
