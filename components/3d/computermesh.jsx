@@ -1,4 +1,4 @@
-import { RenderTexture, useFBX, useTexture } from '@react-three/drei'
+import { OrbitControls, RenderTexture, useFBX, useTexture } from '@react-three/drei'
 import * as THREE from "three";
 import ComputerScreen from './computerscreen';
 
@@ -56,6 +56,7 @@ const ComputerMesh = ({ position = [0, 0, 0], isWireframe = false, children }) =
                         {children}
                     </RenderTexture>
                 </meshStandardMaterial>
+                <OrbitControls enableZoom={false} enablePan={false} />
             </ComputerScreen>
         </>
     );
