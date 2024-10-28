@@ -4,9 +4,9 @@ import ComputerScreen from './computerscreen';
 
 function setupMaterials(fbx) {
     const [tower_texture, monitor_texture, keyboard_texture] = useTexture([
-        '/computer-model/textures/tower_diffuse.png',
-        '/computer-model/textures/monitor_diffuse.png',
-        '/computer-model/textures/keyboard_diffuse.png',
+        './computer-model/textures/tower_diffuse.png',
+        './computer-model/textures/monitor_diffuse.png',
+        './computer-model/textures/keyboard_diffuse.png',
     ]);
 
     // Relates submesh name to diffuse texture
@@ -37,7 +37,7 @@ function setupWireframe(fbx) {
 }
 
 const ComputerMesh = ({ position = [0, 0, 0], isWireframe = false, children }) => {
-    const computerModel = useFBX('/computer-model/computer.fbx');
+    const computerModel = useFBX('./computer-model/computer.fbx');
 
     if (isWireframe) {
         setupWireframe(computerModel);

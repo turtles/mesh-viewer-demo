@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
 const positionOffset = [0.21, 2 - .275, -.55];
 
 export default function ComputerScreen(props) {
-    const { nodes, materials } = useGLTF('/computer-model/monitor_screen.glb')
+    const { nodes, materials } = useGLTF('./computer-model/monitor_screen.glb')
     return (
         <group {...props} dispose={null}>
             <mesh
