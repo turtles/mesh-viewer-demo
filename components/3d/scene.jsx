@@ -34,7 +34,10 @@ class Scene extends React.Component {
                         <ambientLight intensity={Math.PI / 3} />
                         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={1} />
                         <PerspectiveCamera makeDefault manual aspect={1 / 1} position={[0, 0, this.state.zoom]} />
-                        <EditableMesh color={this.props.color.name} isWireframe={this.props.isWireframe} />
+                        <EditableMesh color={this.props.color.name}
+                            isWireframe={this.props.isWireframe}
+                            isAutoRotate={this.props.isAutoRotate}
+                            setIsAutoRotate={this.props.setIsAutoRotate} />
                     </ComputerMesh>
                 </Suspense>
             </Canvas >);

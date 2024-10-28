@@ -7,7 +7,7 @@ import 'react-tabs/style/react-tabs.css';
 import CommandTypes from './data/commandTypes';
 import ColorPicker from './colorpicker';
 
-const EditorPanel = ({ commands, skewAmount, color, isWireframe, onSetIsWireframe, onAddCommand }) => {
+const EditorPanel = ({ commands, skewAmount, color, isWireframe, isAutoRotate, setIsWireframe, setIsAutoRotate, onAddCommand }) => {
 
     return (
         <div className={styles.editorPanel}>
@@ -24,7 +24,11 @@ const EditorPanel = ({ commands, skewAmount, color, isWireframe, onSetIsWirefram
 
                 <TabPanel className={styles.tabPanel}>
                     <div className={styles.verticalContainer}>
-                        <span onClick={() => onSetIsWireframe(!isWireframe)}>
+                        <span onClick={() => setIsAutoRotate(!isAutoRotate)}>
+                            <input type="checkbox" checked={isAutoRotate} />
+                            <label>Auto-Rotate</label>
+                        </span>
+                        <span onClick={() => setIsWireframe(!isWireframe)}>
                             <input type="checkbox" checked={isWireframe} />
                             <label>Wireframe</label>
                         </span>

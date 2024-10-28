@@ -4,6 +4,7 @@ import EditorPanel from './editorpanel';
 
 export default function Editor() {
     const [commands, setCommands] = useState([]);
+    const [isAutoRotate, setIsAutoRotate] = useState(true);
     const [isWireframe, setIsWireframe] = useState(true);
     const [color, setColor] = useState({ name: 'white' });
 
@@ -22,19 +23,17 @@ export default function Editor() {
         processCommand(command)]);
     }
 
-    function onSetIsWireframe(isWireframe) {
-        setIsWireframe(isWireframe);
-    }
-
     console.log(commands);
     return (
         <>
-            <Scene color={color} isWireframe={isWireframe} />
+            <Scene color={color} isWireframe={isWireframe} isAutoRotate={isAutoRotate} setIsAutoRotate={setIsAutoRotate} />
             <EditorPanel
                 commands={commands}
                 color={color}
                 isWireframe={isWireframe}
-                onSetIsWireframe={onSetIsWireframe}
+                isAutoRotate={isAutoRotate}
+                setIsWireframe={setIsWireframe}
+                setIsAutoRotate={setIsAutoRotate}
                 onAddCommand={onAddCommand}
             />
         </>

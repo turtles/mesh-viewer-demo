@@ -4,13 +4,13 @@ import { useGLTF } from '@react-three/drei';
 import { getColorHex } from '../data/colors';
 import rotationAngles from '../data/rotationangles';
 
-const EditableMesh = (props) => {
+const EditableMesh = ({ color, isWireframe, isAutoRotate, setIsAutoRotate }) => {
     const ref = useRef();
     const [hovered, setHovered] = useState(false);
     const [view, setView] = useState(0);
 
     useFrame((state, delta) => {
-        if (!props.isAutoRotate) {
+        if (!isAutoRotate) {
             return;
         }
         ref.current.rotation.x += delta * 0.2;
@@ -23,11 +23,11 @@ const EditableMesh = (props) => {
         setView((view + 1) % rotationAngles.length);
         console.log(ref.current.rotation);
         ref.current.rotation.setFromVector3(rotationAngles[view]);
+        setIsAutoRotate(false);
     }
 
     return (
         <mesh
-            {...props}
             geometry={nodes.teapot.geometry}
             morphTargetDictionary={nodes.teapot.morphTargetDictionary}
             morphTargetInfluences={nodes.teapot.morphTargetInfluences}
@@ -36,8 +36,7 @@ const EditableMesh = (props) => {
             onClick={e => cycleView(ref)}
             onPointerOver={e => setHovered(true)}
             onPointerOut={e => setHovered(false)}>
-            <meshStandardMaterial color={getColorHex(props.color)} wireframe={props.isWireframe}
-            />
+            <meshStandardMaterial color={getColorHex(color)} wireframe={isWireframe} />
         </mesh >
     )
 }
