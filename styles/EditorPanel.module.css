@@ -22,7 +22,15 @@
 }
 
 .editorPanel {
-    width: 600px;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    width: 25%;
+    min-width: 300px;
+    max-width: 600px;
+    height: 60%;
+    min-height: 320px;
+    max-height: 640px;
     display: flex;
     flex-direction: column;
     padding: 2px;
