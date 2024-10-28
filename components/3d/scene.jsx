@@ -4,7 +4,6 @@ import { clamp } from "three/src/math/MathUtils.js";
 import { PerspectiveCamera } from '@react-three/drei';
 import ComputerMesh from './computermesh';
 import EditableMesh from './editablemesh';
-import MeshLoader from './MeshLoader';
 
 const zoomMin = 3;
 const zoomMax = 15;
