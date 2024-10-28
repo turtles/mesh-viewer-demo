@@ -9,7 +9,7 @@ const EditableMesh = ({ color, skew, wavyFrequency = 10, isWavy, isExtruded, isW
     const ref = useRef();
     const [hovered, setHovered] = useState(false);
     const [view, setView] = useState(0);
-    const { nodes, materials } = useGLTF('/utah_teapot.glb');
+    const { nodes, materials } = useGLTF('./utah_teapot.glb');
     const basePositions = useMemo(() => [...nodes.teapot.geometry.attributes.position.array], []);
 
     useFrame((state, delta) => {
