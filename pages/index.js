@@ -21,7 +21,11 @@ export default function Home() {
         Left click (drag): Rotate scene<br />
         <br />
         <span className={styles.credits}>
-          Three.js + React demo <br /><br />
+          Three.js + React demo
+          <br />
+          <a traget="_blank" href="https://github.com/turtles/mesh-viewer-demo">github repository</a>
+          <br />
+          <br />
           Created by Leah Sandacz  <a target="_blank" href="https://github.com/turtles">github.com/turtles</a>
           <br /><br />
           Computer model <a target="_blank" href="https://skfb.ly/6WCSn">"PC-9801UX"</a> by darekagomi is licensed under <a target="_blank" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>.
