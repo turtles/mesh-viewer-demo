@@ -6,5 +6,5 @@ React three fiber (Three.js in React) demo
 ![Screenshot](screenshot.png)
 
 Known issues:
-- Small square in the bottom-right of the screen mesh has incorrect UVs
+- Small square in the bottom-left of the screen mesh has incorrect UVs
 
